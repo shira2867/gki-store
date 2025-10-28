@@ -1,0 +1,84 @@
+.container {
+  padding: 40px;
+  text-align: center;
+}
+
+.title {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.empty {
+  font-size: 1.2rem;
+  color: #888;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.card {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  padding: 15px;
+  transition: transform 0.2s ease;
+}
+
+.card:hover {
+  transform: scale(1.03);
+}
+
+.image {
+  width: 100%;
+  height: 200px;
+  object-fit: contain;
+}
+
+.name {
+  font-size: 1.1rem;
+  margin: 10px 0;
+}
+
+.price {
+  color: #888;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.actions {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.viewBtn,
+.removeBtn {
+  padding: 8px 12px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.viewBtn {
+  background: #0070f3;
+  color: white;
+}
+
+.removeBtn {
+  background: #ff4444;
+  color: white;
+}
+
+.viewBtn:hover {
+  background: #005bb5;
+}
+
+.removeBtn:hover {
+  background: #cc0000;
+}

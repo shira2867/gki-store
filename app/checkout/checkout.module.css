@@ -1,0 +1,91 @@
+/* קונטיינר כללי */
+.container {
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 1rem;
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+/* כל מוצר ברשימה */
+.item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.75rem 0;
+  border-bottom: 1px solid #ddd;
+}
+
+/* תמונת מוצר */
+.item img {
+  border-radius: 5px;
+}
+
+/* החלק שמתרחב */
+.grow {
+  flex-grow: 1;
+}
+
+/* כפתורים */
+.btn {
+  margin-left: 0.5rem;
+  padding: 0.4rem 0.8rem;
+  background-color: #0070f3;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.btn:hover {
+  background-color: #005bb5;
+}
+
+/* קונטרולר של כפתורים */
+.controls {
+  display: flex;
+  align-items: center;
+}
+
+/* סה"כ רכישה */
+.total {
+  font-weight: bold;
+  margin-top: 1rem;
+  font-size: 1.2rem;
+  text-align: right;
+}
+
+/* כפתורי פעולה מתחת לסכום */
+.actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+/* responsive - מסכים קטנים */
+@media (max-width: 600px) {
+  .item {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .controls {
+    margin-top: 0.5rem;
+  }
+
+  .actions {
+    flex-direction: column;
+    width: 100%;
+    align-items: stretch;
+  }
+
+  .btn {
+    width: 100%;
+    text-align: center;
+    margin-left: 0;
+    margin-top: 0.3rem;
+  }
+}

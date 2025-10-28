@@ -1,0 +1,31 @@
+/* קונטיינר כללי לדף */
+.container {
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* כותרת הדף – שם הקטגוריה */
+.title {
+  text-transform: capitalize; /* יהפוך את האות הראשונה לאות גדולה */
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  text-align: center;
+  color: #333;
+}
+
+/* Grid להצגת הכרטיסים */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 1.5rem;
+}
+
+/* מצב ריספונסיבי למסכים קטנים */
+@media (max-width: 768px) {
+  .grid {
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    gap: 1rem;
+  }
+}

@@ -1,0 +1,26 @@
+
+
+/* ריספונסיבי למסכים קטנים */
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .image {
+    max-width: 90%;
+  }
+
+  .info {
+    width: 100%;
+  }
+
+  .buttons {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .buttons button {
+    width: 100%;
+  }
+}
