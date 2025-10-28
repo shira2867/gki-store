@@ -22,14 +22,13 @@ export default function WishlistPage() {
               <p className={styles.price}>${item.price}</p>
 
               <div className={styles.actions}>
-                <Link href={`/product/${item.id}`} className={styles.viewBtn}>
-                  צפייה
+                <Link href={`/product/${item.id}`} >
+                👀
                 </Link>
                 <button
-                  className={styles.removeBtn}
                   onClick={() => removeFromWishlist(item.id)}
                 >
-                  הסרה
+                  ❌
                 </button>
               </div>
             </div>

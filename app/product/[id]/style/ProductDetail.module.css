@@ -1,6 +1,5 @@
 
 
-/* ריספונסיבי למסכים קטנים */
 @media (max-width: 768px) {
   .container {
     flex-direction: column;

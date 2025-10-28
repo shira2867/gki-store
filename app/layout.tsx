@@ -14,7 +14,11 @@ export default function RootLayout({
     <html lang="en">
       <body
       >
-                <Header />
+
+        <Header />
+        <main>
+          <img src="/logo2.jpg" alt="GKI Store Logo" width={200} height={40} style={{ display: 'block', margin: '0 auto' }} />
+        </main>
 
         {children}
       </body>

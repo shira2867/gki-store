@@ -10,9 +10,10 @@ export default function Header() {
     return (
         <header className={styles.header}>
             <div className={styles.logo}>
-                <Link href="/">GKI Shop</Link>
-            </div>
+                   <img src="/logo2.jpg" alt="logo" className={styles.logoImage} />
+                         </div>
             <nav className={styles.nav}>
+
                 <Link href="/home">Home</Link>
                 <Link href="/category/men's clothing">Men</Link>
                 <Link href="/category/women's clothing">Women</Link>

@@ -21,16 +21,15 @@ export default function CheckoutPage() {
             </p>
           </div>
           <div className={s.controls}>
-            <button className={s.btn} onClick={() => updateQuantity(product.id, (product.quantity || 1) - 1)}>-</button>
-            <button className={s.btn} onClick={() => updateQuantity(product.id, (product.quantity || 1) + 1)}>+</button>
-            <button className={s.btn} onClick={() => removeFromCart(product.id)}>Remove</button>
+            <button className={s.btn} onClick={() => updateQuantity(product.id, (product.quantity || 1) - 1)}>➖</button>
+            <button className={s.btn} onClick={() => updateQuantity(product.id, (product.quantity || 1) + 1)}>➕</button>
+            <button className={s.btn} onClick={() => removeFromCart(product.id)}>🗑️</button>
           </div>
         </div>
       ))}
       <hr />
       <p className={s.total}>Total: ${totalPrice.toFixed(2)}</p>
       <div className={s.actions}>
-        <button className={s.btn} onClick={() => alert("Simulated payment ✔")}>Pay Now</button>
         <button className={s.btn} onClick={clearCart}>Clear Cart</button>
       </div>
     </section>

@@ -21,7 +21,7 @@ export default function HomePage() {
 
   return (
     <main>
-      <h1>Latest Products</h1>
+      <h1 style={{ fontSize: '2rem', fontWeight: 'bold', textAlign: 'center', marginTop: '20px' }}>Latest Products</h1>
       <ProductList url="https://fakestoreapi.com/products" />
     </main>
   );

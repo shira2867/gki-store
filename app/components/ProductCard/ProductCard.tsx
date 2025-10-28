@@ -31,9 +31,8 @@ export default function ProductCard({ product }: ProductCardProps) {
       </Link>
 
       <p className={styles.price}>${product.price}</p>
-      <p className={styles.category}>{product.category}</p>
-         <button onClick={() => addToCart(product)}>Add to Cart</button>
-      <button onClick={() => addToWishlist(product)}>♡ Wishlist</button>
+         <button className={styles.button} onClick={() => addToCart(product)}>Add to Cart</button>
+      <button  onClick={() => addToWishlist(product)}> ❤️</button>
     </div>
   );
 }
