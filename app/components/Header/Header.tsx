@@ -9,9 +9,7 @@ export default function Header() {
 
     return (
         <header className={styles.header}>
-            <div className={styles.logo}>
-                   <img src="/logo2.jpg" alt="logo" className={styles.logoImage} />
-                         </div>
+          
             <nav className={styles.nav}>
 
                 <Link href="/home">Home</Link>
