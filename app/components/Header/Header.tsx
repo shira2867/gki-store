@@ -3,13 +3,25 @@ import Link from 'next/link';
 import { useCartStore } from '../../store/storeCart';
 
 import styles from './Header.module.css';
+import CartSidebar from '../CartSidebar/CartSidebar';
 
 export default function Header() {
     const cart = useCartStore((state) => state.cart);
 
     return (
+        <>
         <header className={styles.header}>
-          
+                 <h1 className={styles.logo}>
+                    <Link href="/">
+                        <img 
+                            src="/logo2.jpg"  // נתיב לתמונה בתוך public
+                            alt="GKI Store Logo"
+                            width={120}      // רוחב הלוגו
+                            height={60}      // גובה הלוגו
+                        />
+                    </Link>
+                </h1>
+
             <nav className={styles.nav}>
 
                 <Link href="/home">Home</Link>
@@ -24,5 +36,8 @@ export default function Header() {
                 </Link>
             </nav>
         </header>
+              <CartSidebar />
+
+        </>
     );
 }

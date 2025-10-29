@@ -123,11 +123,28 @@
   }
 
   .actions {
-    flex-direction: column;
+    flex-direction: row;
     width: 100%;
   }
 
   .btn {
     width: 100%;
+    
+   
   }
+}
+.clear{
+background-color: rgb(246, 217, 27);
+    color: black;
+    font-weight: 700;
+    height: 50px;
+    width: 90px;
+    border-radius: 10px;
+    border: black 2px solid;
+    padding-top: 10px;
+}
+.total{
+  font-size: 1.5rem;
+  font-weight: 700;
+  padding: 10px 0;
 }

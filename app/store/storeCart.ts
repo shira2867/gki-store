@@ -4,27 +4,31 @@ import { Product } from '../components/ProductCard/ProductCard';
 
 interface CartState {
   cart: Product[];
+  isOpen: boolean; // ✅ האם החלונית פתוחה
   addToCart: (product: Product) => void;
   removeFromCart: (productId: number) => void;
   updateQuantity: (productId: number, quantity: number) => void;
   clearCart: () => void;
+  toggleCart: (open?: boolean) => void; // ✅ פונקציה לפתיחה/סגירה
 }
 
 export const useCartStore = create<CartState>()(
   persist(
-    (set) => ({
+    (set, get) => ({
       cart: [],
+      isOpen: false, // ✅ ברירת מחדל: סגור
       addToCart: (product) =>
         set((state) => {
           const exists = state.cart.find((p) => p.id === product.id);
-          if (exists) {
-            return {
-              cart: state.cart.map((p) =>
-                p.id === product.id ? { ...p, quantity: (p.quantity || 1) + 1 } : p
-              ),
-            };
-          }
-          return { cart: [...state.cart, { ...product, quantity: 1 }] };
+          const newCart = exists
+            ? state.cart.map((p) =>
+                p.id === product.id
+                  ? { ...p, quantity: (p.quantity || 1) + 1 }
+                  : p
+              )
+            : [...state.cart, { ...product, quantity: 1 }];
+
+          return { cart: newCart, isOpen: true }; 
         }),
       removeFromCart: (productId) =>
         set((state) => ({
@@ -37,6 +41,7 @@ export const useCartStore = create<CartState>()(
           ),
         })),
       clearCart: () => set({ cart: [] }),
+      toggleCart: (open) => set({ isOpen: open ?? !get().isOpen }), // ✅ מאפשר לפתוח/לסגור
     }),
     { name: 'cart-storage' }
   )

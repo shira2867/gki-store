@@ -27,10 +27,11 @@ export default function CheckoutPage() {
           </div>
         </div>
       ))}
-      <hr />
-      <p className={s.total}>Total: ${totalPrice.toFixed(2)}</p>
       <div className={s.actions}>
-        <button className={s.btn} onClick={clearCart}>Clear Cart</button>
+
+        <button className={s.clear} onClick={clearCart}>Clear Cart</button>
+        <p className={s.total}>Total: ${totalPrice.toFixed(2)}</p>
+
       </div>
     </section>
   );
