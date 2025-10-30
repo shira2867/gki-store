@@ -5,7 +5,7 @@ import Link from 'next/link';
 
 
 export default function CartSidebar() {
-  const { cart, isOpen, toggleCart, updateQuantity, clearCart } = useCartStore();
+  const { cart, isOpen, toggleCart, updateQuantity } = useCartStore();
 
   if (!isOpen) return null; 
   const totalPrice = cart.reduce((sum, p) => sum + (p.price * (p.quantity || 1)), 0);

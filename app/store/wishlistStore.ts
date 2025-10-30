@@ -1,11 +1,7 @@
 import { create } from "zustand";
+import { Product } from "../components/ProductCard/ProductCard";
 
-interface Product {
-  id: number;
-  title: string;
-  price: number;
-  image: string;
-}
+
 
 interface WishlistStore {
   wishlist: Product[];
