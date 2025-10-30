@@ -14,10 +14,10 @@ export default function Header() {
                  <h1 className={styles.logo}>
                     <Link href="/">
                         <img 
-                            src="/logo2.jpg"  // נתיב לתמונה בתוך public
+                            src="/logo2.jpg"  
                             alt="GKI Store Logo"
-                            width={120}      // רוחב הלוגו
-                            height={60}      // גובה הלוגו
+                            width={120}      
+                            height={60}     
                         />
                     </Link>
                 </h1>

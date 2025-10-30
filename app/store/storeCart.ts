@@ -4,19 +4,19 @@ import { Product } from '../components/ProductCard/ProductCard';
 
 interface CartState {
   cart: Product[];
-  isOpen: boolean; // ✅ האם החלונית פתוחה
+  isOpen: boolean; 
   addToCart: (product: Product) => void;
   removeFromCart: (productId: number) => void;
   updateQuantity: (productId: number, quantity: number) => void;
   clearCart: () => void;
-  toggleCart: (open?: boolean) => void; // ✅ פונקציה לפתיחה/סגירה
+  toggleCart: (open?: boolean) => void; 
 }
 
 export const useCartStore = create<CartState>()(
   persist(
     (set, get) => ({
       cart: [],
-      isOpen: false, // ✅ ברירת מחדל: סגור
+      isOpen: false, 
       addToCart: (product) =>
         set((state) => {
           const exists = state.cart.find((p) => p.id === product.id);
@@ -41,7 +41,7 @@ export const useCartStore = create<CartState>()(
           ),
         })),
       clearCart: () => set({ cart: [] }),
-      toggleCart: (open) => set({ isOpen: open ?? !get().isOpen }), // ✅ מאפשר לפתוח/לסגור
+      toggleCart: (open) => set({ isOpen: open ?? !get().isOpen }),
     }),
     { name: 'cart-storage' }
   )

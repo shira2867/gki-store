@@ -28,7 +28,7 @@ export default function WishlistPage() {
                 <button
                   onClick={() => removeFromWishlist(item.id)}
                 >
-                  ❌
+                  ❤️
                 </button>
               </div>
             </div>
