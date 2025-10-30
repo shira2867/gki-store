@@ -2,20 +2,26 @@
 
 import { useEffect, useState } from 'react';
 import ProductList from '../components/ProductList/ProductList';
+import {  fetchAllProducts} from "../api/product"; 
 
 export default function HomePage() {
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
 
-  useEffect(() => {
-    fetch('https://fakestoreapi.com/products')
-      .then(res => res.json())
-      .then(data => {
-        setProducts(data);
-        setLoading(false);
-      })
-      .catch(err => console.error(err));
-  }, []);
+useEffect(() => {
+  const loadProducts = async () => {
+    try {
+      const data = await fetchAllProducts();
+      setProducts(data);
+    } catch (err) {
+      console.error('Error loading products:', err);
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  loadProducts();
+}, []);
 
   if (loading) return <p>Loading products...</p>;
 
