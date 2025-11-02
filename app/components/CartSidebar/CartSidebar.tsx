@@ -3,12 +3,10 @@ import { useCartStore } from '../../store/storeCart';
 import styles from './CartSidebar.module.css';
 import Link from 'next/link';
 
-
 export default function CartSidebar() {
-  const { cart, isOpen, toggleCart, updateQuantity } = useCartStore();
+  const { cart, isOpen, toggleCart, updateQuantity, totalPrice } = useCartStore();
 
-  if (!isOpen) return null; 
-  const totalPrice = cart.reduce((sum, p) => sum + (p.price * (p.quantity || 1)), 0);
+  if (!isOpen) return null;
 
   return (
     <>
@@ -31,9 +29,9 @@ export default function CartSidebar() {
                   <p>{item.title}</p>
                   <p>{item.price} ₪</p>
                   <div className={styles.controls}>
-                    <button onClick={() => updateQuantity(item.id, (item.quantity || 1) - 1)} disabled={(item.quantity || 1) <= 1}>-</button>
-                    <span>{item.quantity || 1}</span>
-                    <button onClick={() => updateQuantity(item.id, (item.quantity || 1) + 1)}>+</button>
+                    <button onClick={() => updateQuantity(item.id, item.quantity - 1)} disabled={item.quantity <= 1}>-</button>
+                    <span>{item.quantity}</span>
+                    <button onClick={() => updateQuantity(item.id, item.quantity + 1)}>+</button>
                   </div>
                 </div>
               </div>
@@ -43,7 +41,7 @@ export default function CartSidebar() {
 
         {cart.length > 0 && (
           <div className={styles.footer}>
-            <p className={styles.total}>סה"כ: {totalPrice} ₪</p>
+            <p className={styles.total}>סה"כ: {totalPrice()} ₪</p>
             <Link href="/checkout" className={styles.checkoutBtn}>CHECKOUT</Link>
           </div>
         )}
